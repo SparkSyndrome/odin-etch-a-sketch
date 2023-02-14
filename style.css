@@ -16,9 +16,25 @@ footer {
   padding: 1em;
 }
 
+:root {
+  --grid-rows: 1;
+  --grid-cols: 1;
+}
+
 #grid-container {
   display: grid;
   width: 960px;
   height: 960px;
   border: black solid 5px;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.grid-cell {
+  padding: 1em;
+  text-align: center;
+}
+
+.grid-cell.active {
+  background-color: black;
 }
