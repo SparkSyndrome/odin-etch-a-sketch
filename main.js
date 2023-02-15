@@ -1,7 +1,21 @@
 let color = 'black';
+let penDown = false;
 
 document.addEventListener('DOMContentLoaded', function() {
   makeGrid(16);
+
+  document.querySelector('body').addEventListener('click', function(e) {
+    if (e.target.tagName != 'BUTTON') {
+      penDown = !penDown;
+      let message = document.querySelector('.message');
+      if (penDown) {
+        message.innerHTML = "Click anywhere on the page to stop drawing.";
+      } else {
+        message.innerHTML = "Click anywhere on the page to start drawing.";
+      }
+    }
+  });
+
   let newGridSizeBtn = document.getElementById('select');
   newGridSizeBtn.addEventListener("click", function() {
     getNewGridSize();
@@ -38,10 +52,12 @@ function getNewGridSize() {
 }
 
 function colorDiv() {
-  if (color == 'random') {
-    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-  } else {
-    this.style.backgroundColor = 'black';
+  if (penDown) {
+    if (color == 'random') {
+      this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+      this.style.backgroundColor = 'black';
+    }
   }
 }
 
