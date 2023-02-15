@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
   newGridSizeBtn.addEventListener("click", function() {
     getNewGridSize();
   })
-  console.log("Hi");
 });
 
 
@@ -55,6 +54,14 @@ function colorDiv() {
   if (penDown) {
     if (color == 'random') {
       this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else if (color == 'increment') {
+      let currentOpacity = this.style.opacity;
+      this.style.backgroundColor = 'black';
+      if (currentOpacity) {
+        this.style.opacity = Number(currentOpacity) + 0.1;
+      } else {
+        this.style.opacity = 0.1;
+      }
     } else {
       this.style.backgroundColor = 'black';
     }
