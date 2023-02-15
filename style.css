@@ -7,27 +7,23 @@ body {
 header {
   display: flex;
   flex-direction: column;
-  padding-bottom: 1em;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1em;
 }
 
 footer {
   display: flex;
-  gap: 80px;
-  padding: 1em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  margin-top: 1em;
 }
 
-#grid-container {
+.grid-container {
   display: grid;
-  max-width: 960px;
-  max-height: 960px;
-  border: black solid 5px;
-}
-
-.grid-cell {
-  padding: 1em;
-  text-align: center;
-}
-
-.grid-cell.active {
-  background-color: black;
+  width: 500px;
+  height: 500px;
+  border: black solid 3px;
 }
