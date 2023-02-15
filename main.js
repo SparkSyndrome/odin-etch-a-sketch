@@ -58,7 +58,9 @@ function colorDiv() {
       let currentOpacity = this.style.opacity;
       this.style.backgroundColor = 'black';
       if (currentOpacity) {
-        this.style.opacity = Number(currentOpacity) + 0.1;
+        if (currentOpacity < 1.0) {
+          this.style.opacity = Number(currentOpacity) + 0.1;
+        }
       } else {
         this.style.opacity = 0.1;
       }
