@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 });
 
-
 function makeGrid(gridSize) {
   const gridContainer = document.querySelector('.grid-container');
   
@@ -36,7 +35,6 @@ function makeGrid(gridSize) {
     gridContainer.appendChild(gridCell).className = 'grid-cell';
   }
 }
-
 
 function getNewGridSize() {
   let userInput = prompt("Enter your desired grid size (up to 100)");
